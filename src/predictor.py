@@ -27,8 +27,6 @@ def write_test_image(stream):
                 return
             f.write(chunk)
 
-
-
 class ClassificationService(object):
     def __init__(self, path):
         self.model = None
@@ -63,22 +61,6 @@ class ClassificationService(object):
         img_cpy = img_cpy.reshape((1, img_cpy.shape[0], img_cpy.shape[1], img_cpy.shape[2]))
         return img_cpy
 
-# def load_model(path):
-#     try:
-#         modeljson_path = path + MODEL_FILENAME
-#         weightsjson_path = path + WEIGHTS_FILENAME
-#         print('ModelPath=' + modeljson_path)
-
-#         with open(modeljson_path, 'r') as json_file:
-#           model_json = json_file.read()
-#         model = model_from_json(model_json, custom_objects={})
-#         model.load_weights(weightsjson_path)
-#         print("Loaded model successfully...")
-#         return model
-#     except Exception as e:
-#         print(e)
-#         raise Exception('Reading model failed.')
-
 #Define the path
 model_path = os.path.join(MODEL_PATH, 'model')
 print("Model Path Base: " + str(model_path))
@@ -101,10 +83,6 @@ def ping():
 
 @app.route('/invocations', methods=['POST'])
 def transformation():
-    # Get input JSON data and convert it to a DF
-    # input_json = flask.request.get_json()
-    # img = input_json['image']
-    # predictions = clf.predict(img)
     
     write_test_image(flask.request.stream)
     img = cv2.imread(IMG_FOR_INFERENCE)
