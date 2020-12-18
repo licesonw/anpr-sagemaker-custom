@@ -108,8 +108,8 @@ def transformation():
 
     # Transform predictions to JSON
     result = {
-        'TLp': (np.array(TLp)).tolist(),
-        'coors': (np.array(coors)).tolist()
+        'img_lp': (np.array(TLp)).tolist(),
+        'coords_lp': (np.array(coors)).tolist()
         }
 
     resultjson = json.dumps(result)
