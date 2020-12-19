@@ -24,7 +24,15 @@ of `application/json` with the following format (`img_lp` is the cropped license
 in the original image):
 ```json
 {
-    "img_lp": X,
-    "coords_lp": X, 
+    "img_lp": [[[[...]]]],
+    "coords_lp": [[[...]]], 
 }
+```
+
+### Testing
+
+You can use the provided test script together with the test images to test the SageMaker endpoint as follows:
+
+```bash
+python3 test_sm.py img/golf.jpg --output inference.jpg
 ```
