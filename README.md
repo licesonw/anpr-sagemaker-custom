@@ -24,8 +24,8 @@ of `application/json` with the following format (`img_lp` is the cropped license
 in the original image):
 ```json
 {
-    "img_lp": [[[[...]]]],
-    "coords_lp": [[[...]]], 
+    "img_lp": [[[[0]]]],
+    "coords_lp": [[[0]]], 
 }
 ```
 
